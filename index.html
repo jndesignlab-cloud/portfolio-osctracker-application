@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OSC Request Tracker – Case Study</title>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="card hero full">
+      <h1>OSC Request Tracker System</h1>
+      <p class="subtitle">
+        A web-based request tracking system that provides real-time status updates,
+        queue visibility, and progress tracking.
+      </p>
+
+      <div class="tags">
+        <span>System Design</span>
+        <span>UI/UX</span>
+        <span>Frontend Development</span>
+      </div>
+    </section>
+
+    <!-- GRID -->
+    <div class="grid">
+
+      <!-- PROBLEM -->
+      <section class="card medium">
+        <h3>The Problem</h3>
+        <ul>
+          <li>Lack of transparency</li>
+          <li>Constant follow-ups</li>
+          <li>No progress visibility</li>
+          <li>Manual tracking inefficiency</li>
+        </ul>
+      </section>
+
+      <!-- SOLUTION -->
+      <section class="card medium">
+        <h3>The Solution</h3>
+        <p>
+          A lightweight web app connected to Google Sheets that allows users
+          to track requests in real-time using a tracking number.
+        </p>
+      </section>
+
+      <!-- FEATURES -->
+      <section class="card large">
+        <h3>Key Features</h3>
+        <div class="feature-grid">
+          <div>🔎 Tracking Search</div>
+          <div>📊 Real-Time Status</div>
+          <div>📍 Queue Position</div>
+          <div>👤 Assigned Personnel</div>
+          <div>🧭 Timeline Progress</div>
+          <div>📅 Date Tracking</div>
+        </div>
+      </section>
+
+      <!-- UI DESIGN -->
+      <section class="card large">
+        <h3>Interface Design</h3>
+        <p>
+          The interface uses section-based cards to group related data such as
+          Request Details, Assignment, Timeline, and Queue.
+        </p>
+      </section>
+
+      <!-- SYSTEM FLOW -->
+      <section class="card small">
+        <h3>System Flow</h3>
+        <p>
+          Input Tracking → Fetch Data → Display Structured Result
+        </p>
+      </section>
+
+      <!-- TECH STACK -->
+      <section class="card small">
+        <h3>Tech Stack</h3>
+        <ul>
+          <li>HTML, CSS, JS</li>
+          <li>Google Apps Script</li>
+          <li>Google Sheets</li>
+        </ul>
+      </section>
+
+      <!-- QUEUE -->
+      <section class="card large">
+        <h3>Queue System Logic</h3>
+        <p>
+          Requests are filtered by OPEN status and sorted chronologically
+          to determine queue position dynamically.
+        </p>
+        <div class="highlight">
+          Example: 16th in line (17 open requests)
+        </div>
+      </section>
+
+      <!-- TIMELINE -->
+      <section class="card medium">
+        <h3>Progress Visualization</h3>
+        <p>
+          A timeline replaces text-heavy statuses for faster understanding.
+        </p>
+      </section>
+
+      <!-- CHALLENGES -->
+      <section class="card medium">
+        <h3>Challenges</h3>
+        <ul>
+          <li>Column indexing issues</li>
+          <li>API debugging</li>
+          <li>UI hierarchy refinement</li>
+        </ul>
+      </section>
+
+      <!-- OUTCOME -->
+      <section class="card large">
+        <h3>Outcome</h3>
+        <ul>
+          <li>Reduced follow-ups</li>
+          <li>Improved transparency</li>
+          <li>Scalable internal system</li>
+        </ul>
+      </section>
+
+    </div>
+
+    <!-- FOOTER -->
+    <section class="card full footer">
+      <h3>From Concept to System</h3>
+      <p>
+        This project combines design thinking and development to solve real-world workflow challenges.
+      </p>
+    </section>
+
+  </div>
+
+</body>
+</html>
