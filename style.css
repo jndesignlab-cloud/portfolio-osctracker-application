@@ -12,21 +12,21 @@ body {
   color: #111;
 }
 
-/* Layout */
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* GRID (3 COLUMN) */
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr; /* 🔥 third column slightly bigger */
+  grid-template-columns: 1fr 1fr 1.2fr;
   gap: 20px;
+  align-items: start;
 }
 
-/* Cards */
+/* CARDS */
 .card {
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -34,25 +34,23 @@ body {
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.03);
   transition: all 0.2s ease;
+  height: fit-content;
 }
 
 .card:hover {
   transform: translateY(-2px);
 }
 
-/* Sizes */
+/* SIZES */
 .full {
-  grid-column: span 3;
+  grid-column: 1 / -1;
 }
 
 .large {
   grid-column: span 2;
 }
 
-.medium {
-  grid-column: span 1;
-}
-
+.medium,
 .small {
   grid-column: span 1;
 }
@@ -78,14 +76,14 @@ body {
   margin-right: 6px;
 }
 
-/* Headings */
+/* HEADINGS */
 h3 {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-/* Text */
+/* TEXT */
 p {
   font-size: 0.9rem;
   color: #444;
@@ -100,7 +98,7 @@ li {
   margin-bottom: 6px;
 }
 
-/* Feature Grid */
+/* FEATURE GRID */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -108,7 +106,7 @@ li {
   margin-top: 10px;
 }
 
-/* Highlight */
+/* HIGHLIGHT */
 .highlight {
   margin-top: 10px;
   background: #eef2ff;
@@ -117,61 +115,45 @@ li {
   font-weight: 600;
 }
 
-/* 🔥 PREVIEW CARD */
+/* PREVIEW CARD — forced to 3rd column */
 .preview-card {
-  grid-column: span 1;
+  grid-column: 3;
+  grid-row: span 4;
 }
 
-/* Make it taller visually */
 .preview-card.tall {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
 
-/* Preview Image */
 .preview-img {
   width: 100%;
   margin-top: 12px;
   border-radius: 12px;
   border: 1px solid #e5e7eb;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
 
-/* Button */
-.preview-btn {
-  display: inline-block;
-  margin-top: 14px;
-  padding: 10px 14px;
-  border-radius: 999px;
-  background: #111827;
-  color: white;
-  text-decoration: none;
-  font-size: 0.85rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-
-.preview-btn:hover {
-  background: #1f2937;
-}
-
-/* Footer */
+/* FOOTER */
 .footer {
   text-align: center;
 }
 
-/* Responsive */
+/* RESPONSIVE */
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: 1fr 1fr;
   }
 
-  .full {
-    grid-column: span 2;
+  .full,
+  .large {
+    grid-column: 1 / -1;
   }
 
-  .large {
-    grid-column: span 2;
+  .preview-card {
+    grid-column: 1 / -1;
+    grid-row: auto;
   }
 }
 
@@ -183,7 +165,8 @@ li {
   .full,
   .large,
   .medium,
-  .small {
-    grid-column: span 1;
+  .small,
+  .preview-card {
+    grid-column: 1 / -1;
   }
 }
