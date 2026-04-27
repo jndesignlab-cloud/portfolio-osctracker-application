@@ -9,164 +9,159 @@
 body {
   font-family: 'Inter', sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #111827;
 }
 
 .container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   padding: 40px 20px;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1.2fr;
-  gap: 20px;
-  align-items: start;
-}
-
-/* CARDS */
 .card {
-  background: #fff;
+  background: #ffffff;
   border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-  transition: all 0.2s ease;
-  height: fit-content;
+  border-radius: 16px;
+  padding: 22px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.04);
 }
 
-.card:hover {
-  transform: translateY(-2px);
+.hero {
+  margin-bottom: 24px;
 }
 
-/* SIZES */
-.full {
-  grid-column: 1 / -1;
-}
-
-.large {
-  grid-column: span 2;
-}
-
-.medium,
-.small {
-  grid-column: span 1;
-}
-
-/* HERO */
 .hero h1 {
-  font-size: 2.2rem;
+  font-size: 2.4rem;
   font-weight: 800;
   margin-bottom: 10px;
 }
 
-.subtitle {
-  color: #555;
-  margin-bottom: 12px;
+.hero p {
+  max-width: 760px;
+  color: #4b5563;
+  margin-bottom: 14px;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .tags span {
-  display: inline-block;
   background: #f1f5f9;
-  padding: 6px 10px;
+  padding: 7px 12px;
   border-radius: 999px;
-  font-size: 0.75rem;
-  margin-right: 6px;
-}
-
-/* HEADINGS */
-h3 {
-  font-size: 1rem;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-/* TEXT */
-p {
-  font-size: 0.9rem;
-  color: #444;
-}
-
-ul {
-  padding-left: 18px;
-}
-
-li {
-  font-size: 0.9rem;
-  margin-bottom: 6px;
-}
-
-/* FEATURE GRID */
-.feature-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin-top: 10px;
-}
-
-/* HIGHLIGHT */
-.highlight {
-  margin-top: 10px;
-  background: #eef2ff;
-  padding: 10px;
-  border-radius: 10px;
+  font-size: 0.78rem;
   font-weight: 600;
 }
 
-/* PREVIEW CARD — forced to 3rd column */
-.preview-card {
-  grid-column: 3;
-  grid-row: span 4;
+.case-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  align-items: start;
 }
 
-.preview-card.tall {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.wide {
+  grid-column: span 2;
+}
+
+.preview-panel {
+  position: sticky;
+  top: 24px;
 }
 
 .preview-img {
   width: 100%;
-  margin-top: 12px;
-  border-radius: 12px;
+  margin-top: 14px;
+  border-radius: 14px;
   border: 1px solid #e5e7eb;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.08);
 }
 
-/* FOOTER */
+h3 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #374151;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  font-size: 0.95rem;
+  margin-bottom: 7px;
+  color: #374151;
+}
+
+.feature-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 10px;
+}
+
+.feature-grid div {
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.highlight {
+  margin-top: 14px;
+  background: #eef2ff;
+  color: #1e3a8a;
+  padding: 12px;
+  border-radius: 12px;
+  font-weight: 700;
+}
+
 .footer {
   text-align: center;
 }
 
-/* RESPONSIVE */
-@media (max-width: 1024px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .full,
-  .large {
-    grid-column: 1 / -1;
-  }
-
-  .preview-card {
-    grid-column: 1 / -1;
-    grid-row: auto;
-  }
-}
-
-@media (max-width: 768px) {
-  .grid {
+@media (max-width: 960px) {
+  .case-layout {
     grid-template-columns: 1fr;
   }
 
-  .full,
-  .large,
-  .medium,
-  .small,
-  .preview-card {
-    grid-column: 1 / -1;
+  .preview-panel {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .wide {
+    grid-column: span 1;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
   }
 }
