@@ -12,20 +12,21 @@ body {
   color: #111;
 }
 
+/* Layout */
 .container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
   padding: 40px 20px;
 }
 
-/* GRID */
+/* GRID (3 COLUMN) */
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1fr 1fr 1.2fr; /* 🔥 third column slightly bigger */
   gap: 20px;
 }
 
-/* CARDS */
+/* Cards */
 .card {
   background: #fff;
   border: 1px solid #e5e7eb;
@@ -39,9 +40,9 @@ body {
   transform: translateY(-2px);
 }
 
-/* SIZES */
+/* Sizes */
 .full {
-  grid-column: span 2;
+  grid-column: span 3;
 }
 
 .large {
@@ -77,14 +78,14 @@ body {
   margin-right: 6px;
 }
 
-/* HEADINGS */
+/* Headings */
 h3 {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 10px;
 }
 
-/* TEXT */
+/* Text */
 p {
   font-size: 0.9rem;
   color: #444;
@@ -99,7 +100,7 @@ li {
   margin-bottom: 6px;
 }
 
-/* FEATURE GRID */
+/* Feature Grid */
 .feature-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -107,7 +108,7 @@ li {
   margin-top: 10px;
 }
 
-/* HIGHLIGHT */
+/* Highlight */
 .highlight {
   margin-top: 10px;
   background: #eef2ff;
@@ -116,19 +117,73 @@ li {
   font-weight: 600;
 }
 
-/* FOOTER */
+/* 🔥 PREVIEW CARD */
+.preview-card {
+  grid-column: span 1;
+}
+
+/* Make it taller visually */
+.preview-card.tall {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* Preview Image */
+.preview-img {
+  width: 100%;
+  margin-top: 12px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+/* Button */
+.preview-btn {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #111827;
+  color: white;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.preview-btn:hover {
+  background: #1f2937;
+}
+
+/* Footer */
 .footer {
   text-align: center;
 }
 
-/* RESPONSIVE */
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .full {
+    grid-column: span 2;
+  }
+
+  .large {
+    grid-column: span 2;
+  }
+}
+
 @media (max-width: 768px) {
   .grid {
     grid-template-columns: 1fr;
   }
 
   .full,
-  .large {
+  .large,
+  .medium,
+  .small {
     grid-column: span 1;
   }
 }
